@@ -1,0 +1,322 @@
+/* Configuración inicial - Reset - Carga de fuentes */
+:root{
+  --Almost-White: hsl(0, 0%, 98%);
+  --Medium-Gray: hsl(0, 0%, 41%);
+  --Almost-Black: hsl(0, 0%, 8%);
+
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Epilogue';
+  src: url(./Epilogue/Epilogue-VariableFont_wght.ttf);
+}
+
+body{
+  font-family: 'Epilogue';
+  background-color: var(--Almost-White);
+  color: var(--Almost-Black);
+  font-size: 1.125em;
+}
+
+button{
+  font-family: 'Epilogue';
+  background-color: var(--Almost-White);
+  border: none;
+  cursor: pointer;
+  color: var(--Medium-Gray);
+  font-size: 1em;
+}
+
+/* Header */
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 16px 24px;
+  & .menu-hamburguesa{
+    /* display: none; */
+    cursor: pointer;
+  }
+  & nav{
+    display: none;
+    color: var(--Medium-Gray);
+    & .back{
+      background-color: var(--Medium-Gray);
+      opacity: 0.75;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 780px;
+    }
+    & .front{
+      background-color: var(--Almost-White);
+      width: 240px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 780px;
+      padding: 20px;
+    }
+    /* & #features-btn-arrow{
+      border: 1px solid red;
+    } */
+    & .close-img-container{
+      text-align: right;
+      cursor: pointer;
+    }
+    & li{
+      list-style: none;
+      cursor: pointer;
+      margin-bottom: 26px;
+
+    }
+    & .features-ul, .company-ul{
+      margin-left: 28px;
+      display: none;
+    }
+    & .submenu-btn{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 110px;
+      height: 26px;      
+      margin: 24px 0;
+    }
+    & .btns-container{
+      position: absolute;
+      bottom: 124px;
+    }
+    & .login-btn{
+      display: block;
+      margin: 0 auto 16px;
+    }
+    & .register-btn{
+      border: 1px solid var(--Almost-Black);
+      width: 195px;
+      height: 42px;
+      border-radius: 14px;
+    }
+  }
+}
+
+main{
+  display: flex;
+  flex-direction: column-reverse;
+  & .hero-image{
+    width: 100%;
+    margin-bottom: 48px;
+    /* display: none; */
+  }
+  & h2{
+    text-align: center;
+    font-size: 2.25em;
+    margin-bottom: 16px;
+    
+  }
+  & p{
+    text-align: center;
+    line-height: 26px;
+    margin: 0 16px 24px;
+    color: var(--Medium-Gray);
+    margin-bottom: 16px;
+    font-size: 1rem;
+  }
+  & button{
+    background-color: var(--Almost-Black);
+    color: var(--Almost-White);
+    width: 136px;
+    height: 48px;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 52px;
+    &:hover{
+      background-color: var(--Almost-White);
+      color: var(--Almost-Black);
+      border: 1px solid var(--Almost-Black);
+    }
+  }
+  & .logos-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    margin-bottom: 96px;
+  }
+  & .databiz{
+    width: 81px;
+  }
+  & .audio{
+    width: 52px;
+  }
+  & .meet{
+    width: 64px;
+  }
+  & .maker{
+    width: 59px;
+  }
+}
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  header{
+    
+    & .menu-hamburguesa{
+      display: none;
+    }
+    & nav{
+      margin-left: 24px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      & .back{
+        display: none;
+      }
+      & .front{
+        
+        position: static;
+        width: 100%;
+        display: flex;
+        height: 100%;
+        padding: 0;
+        justify-content: space-between;
+        
+      }
+      & .close-img-container{
+        display: none;
+      }
+      & ul{
+        display: flex;
+        align-items: center;
+        width: 378px;
+        justify-content: space-between;
+      }
+      & li{
+        margin: 0;
+      }
+      & .submenu-btn{
+        margin: 0;
+      }
+      & .btns-container{
+        display: flex;
+        justify-content: space-between;
+        position: static;
+        width: 182px;
+
+      }
+      & .features-ul, .company-ul {
+        background-color: var(--Almost-White);
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        width: 153px;
+        height: 160px;
+        position: absolute;
+        padding: 18px 24px;
+        font-size: 0.875em;
+        display: none;
+        top: 35px;
+        & li{
+          margin-bottom: 16px;
+        }
+      }
+      & .features-ul-container, .company-ul-container {
+        position: relative;
+      }
+      & #features-btn, #company-btn{
+        /* border: 1px solid red; */
+        width: 100px;
+      }
+      & .features-ul{
+        left: -80px;
+      }      
+      & .company-ul{
+        left: -30px;
+      }
+
+      & .login-btn{
+        margin: 0;
+      }
+      & .register-btn{
+        width: 104px;
+      }
+    }
+  }
+  
+  main{
+    /* flex-direction: row; */
+    /* margin-top: 150px; */
+
+    & h2{
+      font-size: 2.625em;
+    }
+    & p{
+      width: 600px;
+      font-size: 1.125em;
+      margin: 40px auto;
+    }
+    & button{
+      width: 163px;
+      height: 56px;
+      font-size: 1.125em;
+      margin-bottom: 46px;
+    }
+    & picture{
+      width: 80%;
+      margin: 24px auto;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  header{
+    margin: 21px 80px 67px;
+    & nav{
+      margin-left: 48px;
+    }
+  }
+  main{
+    margin: 0 180px 20px 165px;
+    flex-direction: row;
+    & picture {
+      width: 500px;
+      margin: 0;
+    }
+    & h2{
+      text-align: left;
+      width: 549px;
+      font-size: 4.5em;
+      margin: 100px 0 48px;
+    }
+    & p{
+      text-align: left;
+      font-size: 1.125em;
+      width: 445px;
+      font-weight: 500;
+      margin: 0 0 25px;
+    }
+    & button{
+      margin: 0 0 116px;
+    }
+  }
+}
+
+
+
+
